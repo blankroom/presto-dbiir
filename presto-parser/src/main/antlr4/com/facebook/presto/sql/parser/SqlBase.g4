@@ -40,6 +40,14 @@ statement
     | CREATE TABLE (IF NOT EXISTS)? qualifiedName
         '(' tableElement (',' tableElement)* ')'
         (WITH tableProperties)?                                        #createTable
+    | CREATE TABLE qualifiedName
+        '(' tableElement (',' tableElement)* ')'
+         FIBER PARTITION BY '(' identifier ')'
+         USING FUNCTION qualifiedName
+         TIMESTAMP BY '(' identifier ')'                               #createTableWithFiber
+    | LOAD FROM hdfsPath
+        AS qualifiedName
+        DELIMITED BY '|'                                               #loadWithDelimited
     | DROP TABLE (IF EXISTS)? qualifiedName                            #dropTable
     | INSERT INTO qualifiedName columnAliases? query                   #insertInto
     | DELETE FROM qualifiedName (WHERE booleanExpression)?             #delete
@@ -461,6 +469,10 @@ normalForm
     : NFD | NFC | NFKD | NFKC
     ;
 
+hdfsPath
+    : '\'hdfs:/' ( '/' identifier )+ '\''
+    ;
+
 SELECT: 'SELECT';
 FROM: 'FROM';
 ADD: 'ADD';
@@ -627,6 +639,11 @@ RESTRICT: 'RESTRICT';
 INCLUDING: 'INCLUDING';
 EXCLUDING: 'EXCLUDING';
 PROPERTIES: 'PROPERTIES';
+
+FIBER: 'FIBER';     //fiber
+FUNCTION:   'FUNCTION';    //function
+LOAD:   'LOAD';            //load
+DELIMITED:  'DELIMITED';    //delimited
 
 NORMALIZE: 'NORMALIZE';
 NFD : 'NFD';
