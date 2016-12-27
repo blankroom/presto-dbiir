@@ -45,6 +45,7 @@ statement
          FIBER PARTITION BY '(' identifier ')'
          USING FUNCTION qualifiedName
          TIMESTAMP BY '(' identifier ')'                               #createTableWithFiber
+    | CREATE FUNCTION qualifiedName                                    #createFunction
     | LOAD FROM hdfsPath
         AS qualifiedName
         DELIMITED BY '|'                                               #loadWithDelimited
