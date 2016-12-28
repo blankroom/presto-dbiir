@@ -1,4 +1,4 @@
-// Generated from /home/blankroom/IdeaProjects/presto/presto-parser/src/main/antlr4/com/facebook/presto/sql/parser/SqlBase.g4 by ANTLR 4.5.3
+// Generated from /home/k2data/IdeaProjects/presto-dbiir/presto-parser/src/main/antlr4/com/facebook/presto/sql/parser/SqlBase.g4 by ANTLR 4.5.3
 package com.facebook.presto.sql.parser;
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;

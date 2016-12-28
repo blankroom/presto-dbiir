@@ -1,4 +1,4 @@
-// Generated from /home/blankroom/IdeaProjects/presto/presto-parser/src/main/antlr4/com/facebook/presto/sql/parser/SqlBase.g4 by ANTLR 4.5.3
+// Generated from /home/k2data/IdeaProjects/presto-dbiir/presto-parser/src/main/antlr4/com/facebook/presto/sql/parser/SqlBase.g4 by ANTLR 4.5.3
 package com.facebook.presto.sql.parser;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -78,6 +78,13 @@ public interface SqlBaseVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitCreateTableWithFiber(SqlBaseParser.CreateTableWithFiberContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code createFunction}
+	 * labeled alternative in {@link SqlBaseParser#statement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCreateFunction(SqlBaseParser.CreateFunctionContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code loadWithDelimited}
 	 * labeled alternative in {@link SqlBaseParser#statement}.
@@ -721,13 +728,6 @@ public interface SqlBaseVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitLambda(SqlBaseParser.LambdaContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code parenthesizedExpression}
-	 * labeled alternative in {@link SqlBaseParser#primaryExpression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitParenthesizedExpression(SqlBaseParser.ParenthesizedExpressionContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code parameter}
 	 * labeled alternative in {@link SqlBaseParser#primaryExpression}.
 	 * @param ctx the parse tree
@@ -762,6 +762,13 @@ public interface SqlBaseVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitBooleanLiteral(SqlBaseParser.BooleanLiteralContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code implicitRowConstructor}
+	 * labeled alternative in {@link SqlBaseParser#primaryExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitImplicitRowConstructor(SqlBaseParser.ImplicitRowConstructorContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code simpleCase}
 	 * labeled alternative in {@link SqlBaseParser#primaryExpression}.

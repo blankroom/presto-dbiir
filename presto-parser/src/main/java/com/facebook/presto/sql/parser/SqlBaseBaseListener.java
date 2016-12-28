@@ -1,4 +1,4 @@
-// Generated from /home/blankroom/IdeaProjects/presto/presto-parser/src/main/antlr4/com/facebook/presto/sql/parser/SqlBase.g4 by ANTLR 4.5.3
+// Generated from /home/k2data/IdeaProjects/presto-dbiir/presto-parser/src/main/antlr4/com/facebook/presto/sql/parser/SqlBase.g4 by ANTLR 4.5.3
 package com.facebook.presto.sql.parser;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -131,6 +131,18 @@ public class SqlBaseBaseListener implements SqlBaseListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitCreateTableWithFiber(SqlBaseParser.CreateTableWithFiberContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCreateFunction(SqlBaseParser.CreateFunctionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCreateFunction(SqlBaseParser.CreateFunctionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -1276,18 +1288,6 @@ public class SqlBaseBaseListener implements SqlBaseListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterParenthesizedExpression(SqlBaseParser.ParenthesizedExpressionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitParenthesizedExpression(SqlBaseParser.ParenthesizedExpressionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterParameter(SqlBaseParser.ParameterContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -1343,6 +1343,18 @@ public class SqlBaseBaseListener implements SqlBaseListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitBooleanLiteral(SqlBaseParser.BooleanLiteralContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterImplicitRowConstructor(SqlBaseParser.ImplicitRowConstructorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitImplicitRowConstructor(SqlBaseParser.ImplicitRowConstructorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
