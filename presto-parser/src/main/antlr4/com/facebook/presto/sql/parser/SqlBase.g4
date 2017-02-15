@@ -47,7 +47,7 @@ statement
          TIMESTAMP BY '(' identifier ')'                               #createTableWithFiber
     | CREATE FUNCTION qualifiedName                                    #createFunction
     | LOAD FROM hdfsPath
-        AS qualifiedName
+        AS TABLE qualifiedName
         DELIMITED BY '|'                                               #loadWithDelimited
     | DROP TABLE (IF EXISTS)? qualifiedName                            #dropTable
     | INSERT INTO qualifiedName columnAliases? query                   #insertInto
@@ -471,7 +471,7 @@ normalForm
     ;
 
 hdfsPath
-    : '\'hdfs:/' ( '/' identifier )+ '\''
+    : 'hdfs:/' ( '/' identifier )+
     ;
 
 SELECT: 'SELECT';
