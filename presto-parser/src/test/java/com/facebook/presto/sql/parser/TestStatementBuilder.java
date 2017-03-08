@@ -51,7 +51,8 @@ public class TestStatementBuilder
         printStatement("select show from foo");
         printStatement("select extract(day from x), extract(dow from x) from y");
 
-        printStatement("select 1 + 13 || '15' from foo");
+        //printStatement("select 1 + 13 || '15' from foo");
+        printStatement("LOAD FROM hdfs://ADV/ADF AS TABLE AGV DELIMITED BY '|'");
 
         printStatement("select x is distinct from y from foo where a is not distinct from b");
 

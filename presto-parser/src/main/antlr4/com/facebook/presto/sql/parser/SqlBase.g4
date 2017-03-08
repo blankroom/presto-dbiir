@@ -48,7 +48,7 @@ statement
     | CREATE FUNCTION qualifiedName                                    #createFunction
     | LOAD FROM hdfsPath
         AS TABLE qualifiedName
-        DELIMITED BY '|'                                               #loadWithDelimited
+        DELIMITED BY '\'|\''                                               #loadWithDelimited
     | DROP TABLE (IF EXISTS)? qualifiedName                            #dropTable
     | INSERT INTO qualifiedName columnAliases? query                   #insertInto
     | DELETE FROM qualifiedName (WHERE booleanExpression)?             #delete
@@ -471,7 +471,7 @@ normalForm
     ;
 
 hdfsPath
-    : 'hdfs:/' ( '/' identifier )+
+    : 'hdfs://' ( identifier '/' )+
     ;
 
 SELECT: 'SELECT';
