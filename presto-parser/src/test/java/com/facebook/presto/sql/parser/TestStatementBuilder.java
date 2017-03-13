@@ -14,7 +14,9 @@
 package com.facebook.presto.sql.parser;
 
 import com.facebook.presto.sql.SqlFormatter;
+import com.facebook.presto.sql.tree.CreateTableWithFiber;
 import com.facebook.presto.sql.tree.Statement;
+import com.facebook.presto.sql.tree.TableElement;
 import com.google.common.io.Resources;
 import org.testng.annotations.Test;
 
@@ -32,9 +34,22 @@ public class TestStatementBuilder
     private static final SqlParser SQL_PARSER = new SqlParser();
 
     @Test
+    public void testCreateWithFiber() {
+        String sql = "create table test (a boolean, b bigint, c double, d varchar, e timestamp) fiber partition by (a) using function abc timestamp by (a)";
+        CreateTableWithFiber statement = (CreateTableWithFiber) SQL_PARSER.createStatement(sql);
+        System.out.println(statement.getTableName());
+        System.out.println(statement.getFunctionName());
+        System.out.println(statement.getPartitionName());
+        System.out.println(statement.getTimeStamp());
+        for(TableElement tableElement : statement.getElements())
+            System.out.println(tableElement);
+    }
+
+    @Test
     public void testStatementBuilder()
             throws Exception
     {
+        printStatement("create table test (a boolean, b bigint, c double, d varchar, e timestamp) fiber partition by (a) using function abc timestamp by (a)");
         printStatement("select * from foo");
         printStatement("explain select * from foo");
         printStatement("explain (type distributed, format graphviz) select * from foo");

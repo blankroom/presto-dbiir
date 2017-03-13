@@ -528,8 +528,7 @@ public abstract class AstVisitor<R, C>
     }
 
     //TODO: overide the method in other class, just like other method do
-    protected R visitCreateTableWithFiber(CreateTableWithFiber node, C context)
-    {
+    protected R visitCreateTableWithFiber(CreateTableWithFiber node, C context) {
         return visitStatement(node, context);
     }
 
